@@ -1,0 +1,125 @@
+/* --- Global Bar Styles --- */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 22, 30, 0.8); /* Dark Transparent */
+    color: #c0caf5;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 12px; /* Makes it a floating pill */
+}
+
+/* --- Individual Modules Setup --- */
+#workspaces,
+#taskbar,
+#custom-menu,
+#clock,
+#network,
+#pulseaudio,
+#tray {
+    background: #24283b;
+    margin: 4px 2px;
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+/* --- The "Start Menu" Icon --- */
+#custom-menu {
+    color: #7aa2f7;
+    font-size: 16px;
+    padding-right: 12px;
+}
+
+/* --- Workspaces (The dots/numbers) --- */
+#workspaces button {
+    padding: 0 5px;
+    color: #565f89;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+    background: rgba(122, 162, 247, 0.1);
+    border-bottom: 2px solid #7aa2f7;
+}
+
+#workspaces button.urgent {
+    color: #f7768e;
+}
+
+/* --- Taskbar (Open Apps) --- */
+#taskbar button {
+    padding: 0 8px;
+    border-bottom: 2px solid transparent;
+}
+
+#taskbar button.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid #7aa2f7;
+}
+
+/* --- Status Modules (Right Side) --- */
+#network {
+    color: #9ece6a;
+}
+
+#network.disconnected {
+    color: #f7768e;
+}
+
+#pulseaudio {
+    color: #bb9af7;
+}
+
+#clock {
+    color: #e0af68;
+    font-weight: bold;
+}
+
+/* --- Tray (Small Icons) --- */
+#tray {
+    margin-right: 8px;
+}
+
+/* --- Tooltip (The Hover Box) --- */
+tooltip {
+    background: #1a1b26;
+    border: 1px solid #7aa2f7;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: #c0caf5;
+    padding: 5px;
+}
+
+
+/* Styling the power button module */
+#custom-power {
+    background-color: #f38ba8; /* Catppuccin Red */
+    color: #11111b;            /* Dark background text */
+    border-radius: 15px;       /* Pill shape */
+    padding-left: 14px; 
+    padding-right: 17px;
+    margin: 4px 8px;           /* Floating effect */
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth hover */
+}
+
+#custom-power:hover {
+    background-color: #eba0ac;
+    box-shadow: 0px 0px 5px 2px rgba(243, 139, 168, 0.4);
+}
+
+#custom-media, #mpris {
+    background-color: #24283b;
+    color: #c0caf5;
+    padding: 0 15px;
+    margin: 4px 0;
+    border-radius: 15px;
+}
