@@ -21,13 +21,13 @@
     "modules-right": [
         "mpd",
         "idle_inhibitor",
+        "tray",
         "pulseaudio",
         "network",
         "backlight",
         "keyboard-state",
         "sway/language",
         "clock",
-        "tray",
         "custom/power"
     ],
     // Modules configuration
@@ -100,12 +100,9 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        "show-passive-icons": true // Shows icons even when they aren't "active"
     },
     "clock": {
    	 "format": "{:%H:%M}",
@@ -218,13 +215,20 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-	    "format": "⏻", // Make sure there is NO space before or after the icon here
-	    "on-click": "dunstify 'Shutting down...' 'System will turn off in 10 seconds' -u critical && sleep 10 && systemctl poweroff",
-            "tooltip": true,
-	    "tooltip-format": "System Shutdown"
+        "format": "󰐥",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "/home/nolgra/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "lock":      "hyprctl dispatch exit",
+            "suspend":   "systemctl suspend",
+            "hibernate": "systemctl hibernate",
+            "reboot":    "systemctl reboot",
+            "shutdown":  "systemctl poweroff"
+        }
     },
     "custom/menu": {
- 	"format": "Start",
+ 	"format": "\uf303",
 	"on-click": "pkill walker || walker",
 	"tooltip": false
     },
